@@ -1,6 +1,6 @@
 #!/bin/bash
-logfile="/var/log/user_management.log"
-passwdstore="var/secure/user_passwords.csv"
+logfile='/var/log/user_management.log'
+passwdstore='/var/secure/user_passwords.csv'
 function create_users(){
 	local file = "$1"
 	while read -r line; do
