@@ -32,7 +32,7 @@ function create_users(){
 			fi
 		done
 
-	done <$file
+	done < $file
  	chmod 400 "$passwdstore"
 }
 
