@@ -2,7 +2,7 @@
 logfile='/var/log/user_management.log'
 passwdstore='/var/secure/user_passwords.csv'
 function create_users(){
-	local file = "$1"
+	local file="$1"
 	while read -r line; do
 		IFS=';' read -r -a USER <<< "$line"
 		if grep -q "${USER[0]}" /etc/passwd; then
