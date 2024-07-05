@@ -32,6 +32,9 @@ function create_users(){
 				echo "Group $GROUP created and user ${USER[0]} added to it." >> "$logfile"
 			fi
 		done
+  		if grep -q "${USER[0]}" /etc/passwd && id -nG "${USER[0]}" | grep -qw "$GROUP"; then
+		    echo "User ${USER[0]} exists in group $GROUP." >> "$logfile"
+		fi
 
 	done < "$file"
  	chmod 400 "$passwdstore"
