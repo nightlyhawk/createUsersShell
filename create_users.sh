@@ -18,7 +18,8 @@ function create_users(){
 		fi
 
 		IFS=',' read -r -a groups <<< "${USER[1]}"
-		for GROUP in "${groups[@]}"; do
+		for group in "${groups[@]}"; do
+  			GROUP=group | xargs
 			if id -nG "${USER[0]}" | grep -qw "$GROUP"; then
 				echo "User ${USER[0]} is already in group $GROUP. Skipping." >> "$logfile"
 				continue
